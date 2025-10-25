@@ -29,52 +29,42 @@ body {
     position: relative;
 }
 
-.card .main-img {
-    width: 300px;
-    cursor: pointer;
-}
-
-.card .main-img::after {
-    background-image: url(./images/icon-view.svg);
-    
-}
-
-.container .card .background {
+.container .card .background img {
     width: 300px;
     height: 300px;
+}
+
+.background {
+  display: block;
+  position: relative;
+}
+
+.background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     background-color: hsl(178, 100%, 50%);
-    opacity: 0.5;
-    position: absolute;
     opacity: 0;
-    z-index: -2;
 }
 
-.container .card .background::before {
-    background-image: url(./images/icon-view.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 1;
-    z-index: 2;
+.background:hover::before {
+  opacity: 0.3;
 }
 
-.card .eye {
-    opacity: 0;
+.background::after {
+    content: "";
+    background-image: url(./icon-view.svg);
     position: absolute;
-    top: 25%;
-    left: 43%;
-    z-index: ;
-}
-
-.card .eye:hover {
-    opacity: 0.5;
-    
-}
-
-.container .card .background:hover {
-    opacity: 0.5;
-    background-image: url(./images/icon-view.svg);
-    background-repeat: no-repeat;
     background-position: center;
+    background-repeat: no-repeat;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
 }
 
 .card h3 {
@@ -149,4 +139,5 @@ hr {
     font-weight: 200;
     margin-left: 3px;
     cursor: pointer;
+
 }
